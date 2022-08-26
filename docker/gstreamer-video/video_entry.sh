@@ -29,4 +29,4 @@ sleep 1
 avahi-daemon -D
 
 sleep 1
-exec su pi -c "/vodeo_stream.sh"
+exec su pi -c "/video_stream.sh"
