@@ -1,2 +1,14 @@
 For Docker-based installations, this directory should contain
 the SSL certificates that will be used. See INSTALLATION.md.
+
+For Balena based installations, after execute balena push command, if janus doesn't start due to ssl certificates, do the follow instructions.
+
+Be sure that docker-compose.yml has a named volume called ssl-config.
+Open terminal throught balena dashboard at HostOS
+
+hostname
+you need that key to be used as Common name during openssh certificate creation
+
+cd /var/lib/docker/volumes/<ssl-config-volume>/_data
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout fruitnanny.key -out fruitnanny.pem
+

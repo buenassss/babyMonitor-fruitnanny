@@ -13,11 +13,20 @@ RUN buildDeps="build-essential python-dev python3-dev python-setuptools python3-
     && rm -rf /tmp/* \
     && rm -rf /var/lib/apt/lists/*
 
-ADD . /opt/fruitnanny
+COPY bin /opt/fruitnanny/bin
+COPY gruntfile.js /opt/fruitnanny
+COPY *.json /opt/fruitnanny/
+
 WORKDIR /opt/fruitnanny
 
 RUN dos2unix /opt/fruitnanny/bin/*
 
-RUN npm install
+COPY configuration/fruitnanny_config.js /opt/fruitnanny/fruitnanny_config.js
+COPY server /opt/fruitnanny/server
+COPY package.json /opt/fruitnanny/.
+
+
+RUN npm install 
 CMD ["node", "server/app.js"]
+
 EXPOSE 7000
