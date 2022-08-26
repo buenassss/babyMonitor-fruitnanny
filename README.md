@@ -55,6 +55,8 @@ Params:
 
 To update baby's picture you need to replace file `docker\fruitnanny\public\project\img\baby.png`.
 
+set timezone in your balena dashboard [Balena timezone](https://github.com/balena-io-examples/balena-timezone)
+
 # How to build and run in balena
 
 * balena push <your fleet>
