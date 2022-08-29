@@ -57,6 +57,13 @@ To update baby's picture you need to replace file `docker\fruitnanny\public\proj
 
 set timezone in your balena dashboard [Balena timezone](https://github.com/balena-io-examples/balena-timezone)
 
+# Password Protect your balenaCam device
+To protect your balenaCam devices using a username and a password set the following environment variables.
+
+Key	Value
+username	yourUserNameGoesHere
+password	yourPasswordGoesHere
+
 # How to build and run in balena
 
 * balena push <your fleet>
