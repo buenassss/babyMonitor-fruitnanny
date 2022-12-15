@@ -17,7 +17,7 @@ services:
       - 5004 # video
 
   gstreamer-audio:
-    image: ivadim/fruitnanny-gstreamer
+    build: docker/gstreamer
     restart: always
     privileged: true
     network_mode: "host"
